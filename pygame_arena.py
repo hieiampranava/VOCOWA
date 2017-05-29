@@ -8,9 +8,9 @@ WHITE = (255, 255, 255)
 BLUE = (0, 0, 255)
 
 # in cm, using standard Cartesian Coordinates
-botY = 60
-botX = 60
-size = [800, 600]
+botY = 20
+botX = 20
+size = [800, 800]
 
 
 def main():
@@ -37,7 +37,8 @@ def main():
             elif event.type == pygame.MOUSEBUTTONUP:
                 mouse_pressed = False
             elif event.type == pygame.MOUSEMOTION and mouse_pressed:
-                pygame.draw.circle(screen, BLACK, event.pos, 2)
+                a[]=event.pos
+                pygame.draw.rect(screen, BLACK, (a[0], a[1], 1, 1))
 
         # to update screen. This must happen after all commands
         pygame.display.flip()
